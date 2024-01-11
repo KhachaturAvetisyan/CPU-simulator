@@ -1,4 +1,4 @@
-#include "../headers/RAM.h"
+#include "RAM.h"
 
 RAM::RAM()
 {
