@@ -43,7 +43,7 @@ void ALU::operation(opcodes opcode, uint8_t A, uint8_t B)
         case ADD:
             add_operation(A, B);
             break;
-        case SUBTRACT:
+        case SUB:
             subtract_operation(A, B);
             break;
         case OR:

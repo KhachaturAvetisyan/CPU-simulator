@@ -24,11 +24,43 @@ TEST_F(RAM_Tests, PushAndPop)
 {
     // Push values to the RAM
     ram->push(42);
+    ASSERT_EQ(ram->error_flag, 0);
+
     ram->push(23);
+    ASSERT_EQ(ram->error_flag, 0);
+
+    ram->push(3);
+    ASSERT_EQ(ram->error_flag, 0);
+
+    ram->push(123);
+    ASSERT_EQ(ram->error_flag, 0);
+
+    ram->push(67);
+    ASSERT_EQ(ram->error_flag, 0);
 
     // Pop values from the RAM and check if they match
-    ASSERT_EQ(ram->pop(), 23);
-    ASSERT_EQ(ram->pop(), 42);
+    uint8_t value = ram->pop();
+    ASSERT_EQ(ram->error_flag, 0);
+    ASSERT_EQ(value, 67);
+
+    value = ram->pop();
+    ASSERT_EQ(ram->error_flag, 0);
+    ASSERT_EQ(value, 123);
+
+    value = ram->pop();
+    ASSERT_EQ(ram->error_flag, 0);
+    ASSERT_EQ(value, 3);
+
+    value = ram->pop();
+    ASSERT_EQ(ram->error_flag, 0);
+    ASSERT_EQ(value, 23);
+
+    value = ram->pop();
+    ASSERT_EQ(ram->error_flag, 0);
+    ASSERT_EQ(value, 42);
+
+    value = ram->pop();
+    ASSERT_EQ(ram->error_flag, 1);
 }
 
 TEST_F(RAM_Tests, OverflowError)

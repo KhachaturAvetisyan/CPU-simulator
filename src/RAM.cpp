@@ -15,6 +15,8 @@ void RAM::push(const uint8_t value)
 
     *stack_ptr = value;
     ++stack_ptr;
+
+    error_flag = 0;
 }
 
 uint8_t RAM::pop()
@@ -24,6 +26,8 @@ uint8_t RAM::pop()
         error_flag = 1;
         return 0;
     }
+
+    error_flag = 0;
 
     return *(--stack_ptr);
 }

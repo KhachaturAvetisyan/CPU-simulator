@@ -34,7 +34,7 @@ TEST_F(ALU_Tests, SUBTRACT)
     // SUBTRACT two nums
     uint8_t A = 10;
     uint8_t B = 8;
-    alu->operation(SUBTRACT, A, B);
+    alu->operation(SUB, A, B);
     ASSERT_EQ(A - B, alu->result);
 }
 

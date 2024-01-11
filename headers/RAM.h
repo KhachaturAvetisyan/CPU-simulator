@@ -1,10 +1,7 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 #include <array>
-
-#include "Opcodes.h"
 
 #define RAM_SIZE                64U
 
