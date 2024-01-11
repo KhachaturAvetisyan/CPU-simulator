@@ -2,7 +2,24 @@
 
 **The project was developed for Linux and macOS operating systems**
 
+> ## Table of contents
+> - [Architecture](#architecture)
+> - [How to build project](#how-to-build-project)
+> - [How to use](#how-to-use)
+> - [CPU operation codes](#cpu-operation-codes)
+> - [Error codes](#error-codes)
+
+
+## Architecture
+
+--------------------------------------------------------------
+
+![CPU simulator architecture](architecture.png)
+
+
 ## How to build project
+
+--------------------------------------------------------------
 
 This project uses the conan package manager.
 
@@ -49,6 +66,8 @@ This project uses the conan package manager.
 
 ## How to use
 
+--------------------------------------------------------------
+
 Run program and enter CPU operation code and operands.
 
 **Example:**
@@ -64,6 +83,8 @@ POP
 
 ## CPU operation codes
 
+--------------------------------------------------------------
+
 | Operation code | Description                                                   |
 |----------------|---------------------------------------------------------------|
 | PUSH           | Pushes operand to the stack                                   |
@@ -77,6 +98,8 @@ POP
 | RSHIFT         | Performs right shift operation on one operand from the stack  |
 
 ## Error codes
+
+--------------------------------------------------------------
 
 | Error code         | Description                        |
 |--------------------|------------------------------------|
