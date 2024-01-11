@@ -2,48 +2,28 @@
 
 RAM::RAM()
 {
-    instruction_ptr = memory.begin();
-    stack_ptr = memory.end();
-    rsp = memory.begin() + STACK_SIZE;
+    stack_ptr = memory.begin();
 }
 
-
-void RAM::write_instructions(const std::string& file_name)
+void RAM::push(const uint8_t value)
 {
-
-}
-
-uint8_t RAM::read_instruction()
-{
-    if (instruction_ptr == instructions_end_ptr)
+    if (stack_ptr == memory.end())
     {
-        instruction_ptr = memory.begin();
-        instructions_end_ptr = memory.begin();
+        error_flag = 1;
+        return;
+    }
 
+    *stack_ptr = value;
+    ++stack_ptr;
+}
+
+uint8_t RAM::pop()
+{
+    if (stack_ptr == memory.begin())
+    {
+        error_flag = 1;
         return 0;
     }
-    else
-    {
 
-    }
-
-    // return  ? *(instruction_ptr++) : 0;
+    return *(--stack_ptr);
 }
-
-
-
-void RAM::stack_operation(opcodes opcode, uint8_t &value, uint8_t *ptr)
-{
-    switch (opcode)
-    {
-        case READ:
-            break;
-        case WRITE:
-            break;
-        default:
-            break;
-    }
-}
-
-
-

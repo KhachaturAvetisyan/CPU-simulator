@@ -12,8 +12,8 @@ enum opcodes
     RSHIFT      =       0b10000111,
 
     // RAM
-    READ        =       0b10001000,
-    WRITE       =       0b10001001,
+    PUSH        =       0b10001000,
+    POP         =       0b10001001,
 
     CALL        =       0b10001010
 };
