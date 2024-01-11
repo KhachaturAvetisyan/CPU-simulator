@@ -27,7 +27,7 @@ uint8_t RAM::read_instruction()
 
     }
 
-    return  ? *(instruction_ptr++) : 0;
+    // return  ? *(instruction_ptr++) : 0;
 }
 
 

@@ -18,7 +18,7 @@ void ALU::or_operation(uint8_t A, uint8_t B)
 
 void ALU::not_operation(uint8_t A)
 {
-    result = not A;
+    result = ~A;
 }
 
 void ALU::and_operation(uint8_t A, uint8_t B)
