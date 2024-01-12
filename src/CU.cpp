@@ -2,6 +2,8 @@
 
 void CU::input_operation(const std::string& operation)
 {
+    output_flag = false;
+
     if (waiting_opcode_flag)
     {
         const auto opcode = opcodeDictionary.find(operation);
@@ -24,7 +26,7 @@ void CU::input_operation(const std::string& operation)
         {
             result = ram.pop();
 
-            // ceck if pop was successful
+            // check if pop was successful
             if (ram.error_flag)
             {
                 error_flag = STACK_UNDERFLOW;
@@ -38,7 +40,7 @@ void CU::input_operation(const std::string& operation)
         {
             const uint8_t val2 = ram.pop();
 
-            // ceck if pop was successful
+            // check if pop was successful
             if (ram.error_flag)
             {
                 error_flag = STACK_UNDERFLOW;
@@ -47,7 +49,7 @@ void CU::input_operation(const std::string& operation)
 
             const uint8_t val1 = ram.pop();
 
-            // ceck if pop was successful
+            // check if pop was successful
             if (ram.error_flag)
             {
                 error_flag = STACK_UNDERFLOW;
@@ -70,7 +72,7 @@ void CU::input_operation(const std::string& operation)
         {
             const uint8_t val = ram.pop();
 
-            // ceck if pop was successful
+            // check if pop was successful
             if (ram.error_flag)
             {
                 error_flag = STACK_UNDERFLOW;
