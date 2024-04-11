@@ -11,14 +11,19 @@ const std::unordered_map<error_codes, std::string> errorDictionary =
     {INVALID_INPUT_SIZE, "INVALID_INPUT_SIZE"}
 };
 
-int main()
+int main(int argc, char* argv[])
 {
     CU cu;
+    std::string input;
 
     for (;;)
     {
-        std::string input;
         std::getline(std::cin, input);
+
+        if (input == "exit")
+        {
+            break;
+        }
 
         cu.input_operation(input);
 
